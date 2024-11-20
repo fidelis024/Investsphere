@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYC|WITHDRAWAL</title>
+    <link rel="stylesheet" href="withdraw.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KYC Verification</h1>
+        <h2>Please provide the following information to verify your identity</h2>
+        <hr>
+
+        <form>
+            <section>
+                <h3>Personal information</h3>
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" required>
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" required>
+                <label for="date-of-birth">Date of Birth:</label>
+                <input type="date" id="date-of-birth" required>
+                <label for="country-of-residence">Country of Residence</label>
+                <select  id="country-of-residence">
+                    <option value="">Select Country</option>
+                    <!----add country option here-->
+                </select>
+            </section>
+            <section>
+                <h3>Identification Documents</h3>
+                <label for="id-type">ID Type:</label>
+                <select  id="id-type" required>
+                    <option value="">Select ID Type</option>
+                    <option value="passport">Passport</option>
+                    <option value="driver-license">Driver`s License</option>
+                    <option value="national-id">National ID</option>
+                </select>
+                <label for="id-number">ID Number:</label>
+                <input type="text" id="id-number" required>
+                <label for="id-document">Upload ID Document:</label>
+                <input type="file" id="id-document" required>
+            </section>
+            <section>
+                <h3>Address Verification</h3>
+                <label for="Address-line-1">Address Line 1:</label>
+                <input type="text" id="address-line-1" required>
+                <label for="Address-line-2">Address Line 2:</label>
+                <input type="text" id="address-line-2" required>
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+                <label for="postal-code">Postal Code:</label>
+                <input type="text" id="postal-code" required>
+            </section>
+            <button type="submit" id="kyc-submit">Submit KYC Application</button>
+        </form>
+        <hr>
+        <p>Please note:</p>
+        <ul>
+            <li>All fields are mandatory unless specified otherwise.</li>
+            <li>Ensure documents are clear and legible.</li>
+            <li>Verification process may take up to 24-48 hours.</li>
+        </ul>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+        <div class="footer-copyright">
+            <p>&copy;2024 InvestSphere. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+       // Submit KYC application
+document.getElementById('kyc-submit').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Validate form fields
+    if (validateForm()) {
+        // Submit form data to server
+        submitFormData();
+    }
+});
+
+// Validate form fields
+function validateForm() {
+    var firstName = document.getElementById('first-name').value;
+    var lastName = document.getElementById('last-name').value;
+    var dateOfBirth = document.getElementById('date-of-birth').value;
+    var idType = document.getElementById('id-type').value;
+    var idNumber = document.getElementById('id-number').value;
+    var idDocument = document.getElementById('id-document').files[0];
+
+    if (firstName === '' ||lastName === ''  ||dateOfBirth === ''  ||idType === ''  ||idNumber === '' || !idDocument) {
+        alert('Please fill in all required fields.');
+        return false;
+    }
+
+    return true;
+}
+
+// Submit form data to server
+function submitFormData() {
+    var formData = new FormData();
+    formData.append('first-name', document.getElementById('first-name').value);
+    formData.append('last-name', document.getElementById('last-name').value);
+    formData.append('date-of-birth', document.getElementById('date-of-birth').value);
+    formData.append('id-type', document.getElementById('id-type').value);
+    formData.append('id-number', document.getElementById('id-number').value);
+    formData.append('id-document', document.getElementById('id-document').files[0]);
+
+    fetch('/kyc-endpoint', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('KYC application submitted successfully!');
+        } else {
+            alert('Error submitting KYC application.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+    </script>
+</body>
+</html>

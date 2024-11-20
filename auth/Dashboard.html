@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+    <div class="toggle-btn" onclick="toggleSidebar()">&#9776;</div>
+    <nav id="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()">&times;</span> <!-- Close button -->
+        <div class="brand">InvestSphere</div>
+        <ul class="sidebar">
+            <li><a href="#">Dashboard</a></li>
+            <li>
+                <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Investment</a>
+                <ul class="dropdown">
+                    <li><a href="Investmentplan.html">Plan</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Finance</a>
+                <ul class="dropdown">
+                    <li><a href="Deposit.html">Deposit</a></li>
+                    <li><a href="withdraw.html">Withdraw</a></li>
+                    <li><a href="transaction.html">Transactions</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="dropdown-toggle" onclick="toggleDropdown(event)">Account</a>
+                <ul class="dropdown">
+                    <li><a href="#">Profile Setting</a></li>
+                    <li><a href="Support.html">Support Ticket</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Welcome, User!</h1>
+
+        <div class="section">
+            <h2>Account Overview</h2>
+            <div class="card">
+                <div class="card-title">Account ID</div>
+                <div class="card-value">1234567890</div> <!-- Example Account ID -->
+            </div>
+            <div class="card">
+                <div class="card-title">Current Date</div>
+                <div class="card-value" id="currentDate"></div> <!-- Displays current date -->
+            </div>
+            <div class="card">
+                <div class="card-title">Deposit Wallet Balance</div>
+                <div class="card-value">$0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Interest Wallet Balance</div>
+                <div class="card-value">$0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Total Invest</div>
+                <div class="card-value">$0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Total Deposit</div>
+                <div class="card-value">$0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Total Withdrawal</div>
+                <div class="card-value">$0</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Referral Eeaning</div>
+                <div class="card-value">$0</div>
+            </div>
+        </div>
+    </div>
+    <button id="logout-button">Logout</button>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        function toggleDropdown(event) {
+            const dropdown = event.target.nextElementSibling; // Get the dropdown related to the clicked link
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dd => {
+                if (dd !== dropdown) {
+                    dd.classList.remove('active'); // Close other dropdowns
+                }
+            });
+            dropdown.classList.toggle('active'); // Toggle the current dropdown
+        }
+
+        // Function to display current date
+        function displayCurrentDate() {
+            const date = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = date.toLocaleDateString(undefined, options);
+        }
+
+        // Run the date display function on page load
+        window.onload = displayCurrentDate;
+        // LOGOUT FUNTIONALITY
+        window.onload = function() {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    if (!loggedInUser) {
+        // Redirect to the login/registration page if not logged in
+        window.location.href = 'landing.html'; // Change 'index.html' to your login page file name
+    } else {
+        document.getElementById('user-welcome').innerText = `Hello, ${loggedInUser}!`;
+    }
+
+    document.getElementById('logout-button').addEventListener('click', function() {
+        // Clear login data and redirect to the login page
+        localStorage.removeItem('loggedInUser');
+        window.location.href = 'landing.html'; // Change 'index.html' to your login page file name
+    });
+};
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-copyright{
+    text-align: center;
+    margin-top: 20px;
+}
+.footer-links p{
+    margin-bottom: 10px;
+}
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f9f9f9;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#prev-page, #next-page {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#prev-page:hover, #next-page:hover {
+    background-color: #3e8e41;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction History</h1>
+        <h2>View your recent transactions</h2>
+        <hr/>
+
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Transaction ID</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample transaction data -->
+                <tr>
+                    <td>2023-02-20</td>
+                    <td>TXN123456</td>
+                    <td>Deposit</td>
+                    <td>$100.00</td>
+                    <td>Confirmed</td>
+                </tr>
+                <tr>
+                    <td>2023-02-15</td>
+                    <td>TXN123457</td>
+                    <td>Withdrawal</td>
+                    <td>$50.00</td>
+                    <td>Pending</td>
+                </tr>
+                <!-- Add more transaction data here -->
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <button id="prev-page">Previous</button>
+            <button id="next-page">Next</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+        <div class="footer-copyright">
+            <p>&copy;2024 InvestSphere. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

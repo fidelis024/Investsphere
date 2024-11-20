@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestSphere</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="invest.css">
+</head>
+<body>
+    <nav>
+        <h1 class="invest-title">Invest<span class="sphere">Sphere</span></h1>
+        <ul>
+            <li class="hideonmobile"><a href="#home">Home</a></li>
+            <li class="hideonmobile"><a href="#about">About</a></li>
+            <li class="hideonmobile"><a href="#plan">Plan</a></li>
+            <li><a href="auth/index.html">Register|SignIn</a></li>
+            <li onclick="showsidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+        <ul class="sidebar">
+            <li onclick="hidesidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#plan">Plan</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="auth/index.html">SIGNUP|SIGNIN</a></li>
+        </ul>
+    </nav>
+        <script>
+            function showsidebar() {
+                const sidebar = document.querySelector(".sidebar")
+                sidebar.style.display="flex"
+            }
+            function hidesidebar() {
+                const sidebar = document.querySelector(".sidebar")
+                sidebar.style.display="none"
+            }
+        </script>
+        <section class="hero">
+        <div class="text-box">
+            <h1 class="invest">Are you ready<span class="chai"> to elevate your investment journey to new heights?</span></h1>
+            <br>
+            <p>Look no further than InvestSphere-your all-in-one platform for crypto, real estate, and stock investments.</p>
+            <p>we understand that navigating the dynamic world of finaance requires intelligence,strategy, and a touch of innovation.</p>
+            <p>That's why we've created InvestSphere, a sophisticated platform designed for the modern investor.</p>
+            <button class="button20"><a href="auth/index.html">SIGN UP</a></button>
+        </div>
+    </section>
+    <!------featured Investment------>
+    <section class="featured-investments">
+        <h2>Popular <span class="sphere">Investments</span></h2>
+        <div class="investment-cards">
+        <div class="investment-card">
+            <h3>Beginner</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">10%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$1,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="auth/index.html">Invest Now</a></button>
+        </div>
+        <div class="investment-card">
+            <h3>Intermediate</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">12%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$2,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="auth/index.html">Invest Now</a></button>
+        </div>
+        <div class="investment-card">
+            <h3>Advanced</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">15%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$5,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="auth/index.html">Invest Now</a></button>
+        </div>
+        <div class="investment-card">
+            <h3>Diamond</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">15%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$10,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="auth/index.html">Invest Now</a></button>
+        </div>
+        </div>
+    </section>
+    <!------Benefits Section------>
+    <section class="benefits">
+        <h2>Why Choose <span class="invest-title">InvestSphere</span></h2>
+        <p>Our goal is to provide our investors with a reliable source of high income, while minimizing any possible risks and offering a high-quality service.</p>
+        <div class="benefit-cards">
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">content_copy</span>
+                <h3>Legal Company</h3>
+                <p>Within the legal sphere, our organisation operates in an entirely lawful manner. Our company is safe, legal, and certified to do financial transactions.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">lock</span>
+                <h3>High reliability</h3>
+                <p>Thousands of people trust us. We put a lot of effort into enhancing our security system and reducing any threats.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">enhanced_encryption</span>
+                <h3>Anonymity</h3>
+                <p>Anonymity and using cryptocurrency as a payment instrument. In the era of electronic money – this is one of the most convenient ways of cooperation.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">local_shipping</span>
+                <h3>Quick Withdrawal</h3>
+                <p>All withdrawals are treated spontaneously once requested and completed within a short time frame.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">link</span>
+                <h3>Referral Program</h3>
+                <p>We are offering a certain level of referral income through our referral program. You can increase your income by simply referring a few people.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">24fps_select</span>
+                <h3>24/7 Support</h3>
+                <p>We provide 24/7 customer support through e-mail and telegram. Our support representatives are periodically available to elucidate and rectify any challenge.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">dns</span>
+                <h3>Dedicated Server</h3>
+                <p>We are using a dedicated server for the website which allows us exclusive use of the resources of the entire server.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">lock_clock</span>
+                <h3>SSL Secured</h3>
+                <p>Comodo Essential-SSL Security encryption confirms that the presented content is genuine and legitimate.</p>
+            </div>
+            <div class="benefit-card">
+                <span class="material-symbols-outlined">Security</span>
+                <h3>DDOS Protection</h3>
+                <p>We are using one of the most experienced, professional, and trusted DDoS Protection and mitigation provider.</p>
+            </div>
+        </div>
+    </section>
+    <!--Testimonials---->
+    <section class="testimonials">
+        <h2>What Our Users Says</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <img src="team-12.jpg" alt="client 1">
+                <blockquote>"As a crypto enthusiast, finding a platform that caters to my passion was crucial. InvestSphere's Crypto Haven exceeded my expectations."</blockquote>
+                <cite>-Bethany Garner, Forbes Staff</cite>
+            </div>
+            <div class="testimonial-card">
+                <img src="inestsphere.avif" alt="client 2">
+                <blockquote>"Crypto Ventures on InvestSphere opened up a world of opportunies for me. The crypto analysis tools are incredibly helpful,and  the range of crypto available suits various investment strategies. Highly recommended for crypto enthusiast."</blockquote>
+                <cite>-Armando Pantoja , Financial Analyst</cite>
+            </div>
+            <div class="testimonial-card">
+                <img src="jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg" alt="client 3">
+                <blockquote>"Security is my top priority, and InvestSphere delivers. The robust security measures and commitment to transparency provide the peace of mind ineed when managing my investments.Trustworthy and reliable!."</blockquote>
+                <cite>-Robert.C., Angel Investor</cite>
+            </div>
+        </div>
+    </section>
+    <!-----PROFIT CALCULATOR----->
+    <section class="profit-caculator">
+        <h2>Profit <span class="sphere">Calculator</span></h2>
+        <p>You must know the calculation before investing in any plan, so you never make mistakes. Check the calculation and you will get as our calculator says.</p>
+        <form>
+            <label for="plan">Select Plan:</label>
+            <select id="plan">
+                <option value="beginner">Beginner($1000)</option>
+                <option value="intermediate">Intermediate($2000)</option>
+                <option value="advanced">Advanced($5000)</option>
+                <option value="diamond">Diamond($10000)</option>
+            </select>
+
+            <label for="investment-days">Investment Duration (days):</label>
+            <input type="number" id="investment-days" required>
+            
+            <button id="calculate-profit">Calculate Profit</button>
+        </form>
+        <div id="profit-result"></div>
+    </section>
+    <script>
+        // defines plan details
+        const plans = { beginner: { minInvestment: 1000,dailyReturn: 2}, intermediate: { minInvestment: 2000,dailyReturn: 3}, advanced: { minInvestment: 5000,dailyReturn: 4}, diamond: { minInvestment: 10000,dailyReturn: 5}, };
+        //Get input fields and result div
+        const planSelect = document.getElementById('plan');
+        const investmentDaysinput = document.getElementById('investment-days');
+        const calculateProfitButton = document.getElementById('calculate-profit');
+        const profitResultDiv = document.getElementById('profit-result');
+        // Add event listener to calcaulate profit button
+        calculateProfitButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            // GET SElected plan and investment duration
+            const selectedPlan = planSelect.value;
+            const investmentDays = parseInt(investmentDaysinput.value);
+            //Calculate profit
+            const minInvestment = plans[selectedPlan].minInvestment;
+            const dailyReturn = plans[selectedPlan].dailyReturn / 100;
+            const totalReturn = (minInvestment * dailyReturn) * investmentDays;
+            const profit = totalReturn + minInvestment;
+            // Display profit result
+            profitResultDiv.innerText = `Total Profit after ${investmentDays} days: $${profit.toFixed(2)}`;
+        });
+    </script>
+    <!------FAQ SECTION------->
+    <section class="faq">
+        <h2>Frequent Asked <span class="sphere">Questions</span></h2>
+        <p style="font-size: 18px; text-align: center; color: white;">We answer some of your Frequently Asked Questions regarding our platform. If you have a query that is not answered here, Please contact us.</p>
+        <br>
+        <dl>
+            <dt><a href="#" class="faq-question">How can i get started on InvestSphere?</a></dt>
+            <dd class="faq-answer"><p>Getting started is simple. Sign up on our platform, explore the available investment options, and use our intuitive tools to make your first investment. Our support team is also available to assist you every step of the way.</p></dd>
+            <dt><a href="#" class="faq-question">Is InvestSphere suitable for beginners?</a></dt>
+            <dd class="faq-answer"><p>Yes, InvestSphere is designed to cater to investors of all levels. Our user-friendly interface, educational resources, and diverse investment options make it easy for beginners to navigate and start building a robust investment portfolio.</p></dd>
+            <dt><a href="#" class="faq-question">Can i trust the analytics provided by InvestSphere?</a></dt>
+            <dd class="faq-answer"><p>Absolutely. Our analytics are powered by cutting-edge algorithms and real-time data, ensuring accuracy and relevance. We are committed to providing you with the tools you need to make informed investment decisions.</p></dd>
+            <dt><a href="#" class="faq-question">How secure is my investment on InvestSphere?</a></dt>
+            <dd class="faq-answer"><p>At InvestSphere, security is paramount. We employ state-of-the-art encryption and security measures to safeguard your investments and personal information. You can trade with confidence, knowing that your assets are protected.</p></dd>
+            <dt><a href="#" class="faq-question">What makes InvestSphere different from other investment platforms?</a></dt>
+            <dd class="faq-answer"><p>InvestSphere stands out with its comprehensive investment ecosystem, covering crypto, real estate, and stocks. Our innovative use of intelligent analytics, user-friendly interface, and commitment to education set us apart, providing a holistic investment experience.</p></dd>
+        </dl>
+    </section>
+        <script>
+            // Add event listener to faq question
+            const faqQuestions = document.querySelectorAll('.faq dt');
+
+            faqQuestions.forEach((question) => {
+                question.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        </script>
+        <!----Latest News Section------>
+        <section class="latest-news">
+            <h2>Latest <span class="sphere">News</span></h2>
+            <div class="news-cards">
+                <div class="news-card">
+                    <img src="bitcoin hal.jpg" alt="bitcoin havling image">
+                    <h3>2024 Halving Event Set to Drive Bitcoin Price Past $69,000 All-Time High</h3>
+                    <p>Bitcoin’s upcoming halving event, which is set to automatically reduce the BTC reward given to successful miners upon validating a new block, is set to drive the bitcoin price to n...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="news-card">
+                    <img src="ripple ha.jpg" alt="ripple image">
+                    <h3>Ripple, Explained</h3>
+                    <p>In a world where technology has transformed the way we communicate and operate, the financial sector has been slow to keep up, especially in the realm of cross-border payments. Tra...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="news-card">
+                    <img src="thumb_6568f724bcd311701377828.jpeg" alt="">
+                    <h3>Large Altcoin of 2023</h3>
+                    <p>If you want to invest in cryptocurrency, one option is to diversify by holding a selection of coins beyond Bitcoin, taking into account the functionalities they offer.Below are the...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </section>
+        <!----- PAYMENT MENTHODS---->
+        <section class="payment-methods">
+            <h2>Payment Methods <span class="sphere">We Accept</span></h2>
+            <p>We accept all major cryptocurrencies and fiat payment methods to make your investment process easier with our platform.</p>
+            <div class="payment-logos-container">
+                <div class="payment-logos">
+                    <img src="bitcoin-btc-logo.png" alt="bitcoin img">
+                    <img src="ethereum-eth-logo.png" alt="eth img">
+                    <img src="tether-usdt-logo.png" alt="usdt image">
+                    <img src="solana-sol-logo.png" alt="solana-sol-logo">
+                </div>
+            </div>
+        </section>
+        <!---- FOOTER SECTION----->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>About <span class="sphere">Us</span></h3>
+                    <p>At InvestSphere, we are on a mission to redefine the way you approach investments. We believe that every investor, regardless of their experience level, deserves access to sophisticated tools, comprehensive resources, and a platform that simplifies the complexities of the financial markets.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="auth/">Investment Plan</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Address: Bourbon Street, New Orleans, USA</p>
+                    <p>Email: <a href="malito:Investsphere0@gmail.com">Investsphere0@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy;2024 InvestSphere. All rights reserved.</p>
+            </div>
+        </footer>
+        <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6730a7fd2480f5b4f59b5614/1icb10dq8';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

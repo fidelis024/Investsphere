@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Plan</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Georgia;
+}
+.featured-investments{
+    padding: 50px;
+    background-color: #f7f7f7;
+}
+.featured-investments h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.investment-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.investment-card{
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.investment-card h3{
+    font-size: 24px;
+    margin-top: 10px;
+}
+.investment-card ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.investment-card li{
+    margin-bottom: 10px;
+}
+.metric{
+    font-weight: bold;
+    font-size: 18px;
+}
+.tooltip{
+    position: absolute;
+    opacity: 0;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+.investment-card li :hover .tooltip{
+    opacity: 1;
+    visibility: visible;
+}
+.value{
+    font-weight: bold;
+    font-size: 18px;
+    color: #337ab7;
+}
+.learn-more{
+    width: 160px;
+    height: 60px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid #0c0c0c;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    position: relative;
+    transition: 0.5s ease;
+}
+.learn-more ::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #0c0c0c;
+    transition: 0.5s ease;
+}
+.learn-more:hover{
+    color: #337ab7;
+    transition-delay: 0.5s;
+}
+.learn-more :hover ::before{
+    width: 100%;
+}
+.learn-more::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #0c0c0c;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.learn-more:hover::after{
+    height: 100%;
+    transition-delay: 0.4s;
+}
+/* Respnsive Design */
+@media (max-width: 768px) {
+    .investment-card{
+        width: calc(50% -20px);
+    }
+}
+@media (max-width: 480px) {
+    .investment-card{
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <!------featured Investment------>
+    <section class="featured-investments">
+        <h2>Popular <span class="sphere">Investments</span></h2>
+        <div class="investment-cards">
+        <div class="investment-card">
+            <h3>Beginner</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">10%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$1,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="Deposit.html">Invest Now</a></button>
+        </div>
+        <div class="investment-card">
+            <h3>Intermediate</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">12%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$2,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="Deposit.html">Invest Now</a></button>
+        </div>
+        <div class="investment-card">
+            <h3>Advanced</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">15%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$5,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="Deposit.html">Invest Now</a></button>
+        </div>
+        <div class="investment-card">
+            <h3>Diamond</h3>
+            <ul>
+                <li><span class="metric">Return on investment (ROI)</span>
+                    <span class="tooltip">Average annual return on investment</span>
+                    <span class="value">15%</span></li>
+                <li><span class="metric">Minimum investment</span>
+                    <span class="tooltip">Minimum amount required to invest</span>
+                    <span class="value">$10,000</span></li>
+            </ul>
+            <button class="learn-more"><a href="Deposit.html">Invest Now</a></button>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

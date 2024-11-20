@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding-left: 0;
+}
+body{
+    font-family: Georgia;
+    background-color: #f0f0f0;
+}
+.container{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: lightblue;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+hr{
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+.wallets{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wallet{
+    flex-basis: 45%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+}
+.wallet input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+.copy-btn{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.copy-btn:hover{
+    background-color: #3e8341;
+}
+form{
+    padding: 20px;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="number"], select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+#submit-payment{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#submit-payment:hover{
+    background-color: #3e8341;
+}
+ul{
+    list-style: disc;
+    margin-left: 20px;
+}
+li{
+    margin-bottom: 10px;
+}
+/* RESPONSIVE DESIGNS */
+@media (max-width: 768px) {
+    .wallets{
+        flex-direction: column;
+    }
+    .wallet{
+        flex-basis: 100%;
+        margin: 20px 0;
+    }
+}
+@media (max-width: 480px) {
+    .container{
+        padding: 10px;
+    }
+    .wallet{
+        padding: 10px;
+    }
+}
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-about,.footer-links,.footer-contact{
+    flex-basis: 25%;
+}
+.footer-about h3, .footer-contact h3 , .footer-links h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-links li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li{
+    margin-bottom: 10px;
+}
+.footer-links a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-links p{
+    margin-bottom: 10px;
+}
+.footer-copyright{
+    text-align: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.container{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,  0, 0, 0.1);
+}
+form{
+    padding: 20px;
+}
+section{
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+h1, h2, h3{
+    color: #333;
+}
+h1{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"], input[type="date"], input[type="file"], select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="file"]{
+    padding: 5px;
+}
+button[type="submit"]{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button[type="submit"]:hover{
+    background-color: #3e8e41;
+}
+ul{
+    list-style: disc;
+    margin-left: 20px;
+}
+li{
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .container{
+        padding: 10px;
+    }
+    .section{
+        padding: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .container{
+        padding: 5px;
+    }
+    .section{
+        padding: 5px;
+    }
+}
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-about,.footer-links,.footer-contact{
+    flex-basis: 25%;
+}
+.footer-about h3, .footer-contact h3 , .footer-links h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-links li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li{
+    margin-bottom: 10px;
+}
+.footer-links a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-links p{
+    margin-bottom: 10px;
+}
+.footer-copyright{
+    text-align: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,187 @@
+body {
+    font-family: Georgia;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    overflow: hidden; /* Prevents scrollbars on the body */
+}
+
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+nav {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    left: -250px; /* Hidden */
+    transition: left 0.3s ease;
+    z-index: 100;
+}
+
+nav.active {
+    left: 0; /* Show sidebar */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #9A8C98;
+}
+
+.dropdown {
+    display: none; /* Hidden by default */
+    background-color: #9A8C98;
+    padding-left: 15px;
+}
+
+.dropdown.active {
+    display: block; /* Show dropdown when active */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    color: #4A4E69;
+    font-size: 20px;
+}
+
+.brand {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main content styling */
+.main-content {
+    margin-left: 260px; /* Space for the sidebar */
+    padding: 20px;
+    overflow-y: auto; /* Scrollable area if content exceeds the viewport */
+    min-height: calc(100vh - 40px); /* Adjust for navbar height */
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #4A4E69;
+}
+
+.card {
+    background-color: #eaeaea;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-value {
+    font-size: 24px;
+    color: #4A4E69;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0; /* Full width on mobile */
+        padding: 10px;
+        height: auto; /* Allow height to adjust */
+    }
+
+    nav {
+        width: 200px;
+    }
+
+    nav.active {
+        left: 0; /* Show sidebar */
+    }
+
+    .toggle-btn {
+        display: block; /* Show toggle button */
+    }
+}
+
+@media (max-width: 480px) {
+    .toggle-btn {
+        font-size: 18px; /* Smaller toggle button on mobile */
+    }
+
+    nav {
+        width: 100%; /* Full width sidebar on small screens */
+        position: relative; /* Position it relatively */
+        height: auto; /* Auto height on mobile */
+    }
+
+    .main-content {
+        margin-left: 0; /* No margin on small screens */
+        padding: 10px; /* Smaller padding */
+        min-height: calc(100vh - 40px); /* Ensure enough height for scrolling */
+    }
+
+    .brand {
+        font-size: 16px; /* Smaller brand text on mobile */
+    }
+
+    .card {
+        margin: 0; /* Remove margins to let cards occupy full width */
+    }
+
+    .card-value {
+        font-size: 20px; /* Smaller card values on mobile */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Still readable font size */
+    }
+}

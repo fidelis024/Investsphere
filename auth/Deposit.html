@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+    <link rel="stylesheet" href="Deposit.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptocurrency Automatic Gateway</h1>
+        <h2>FAST, SECURE AND EASY PAYMENTS</h2>
+        <hr>
+        <h3>Payment Steps:</h3>
+        <ol>
+            <li>Select the cryptocurrency gateway you want to use.</li>
+            <li>Copy the wallet address provided.</li>
+            <li>Send the exact amount of cryptocurrency to the address provided.</li>
+            <li>After completing the transaction, fill out "Payment Details" to finalize the process.</li>
+            <li>Make sure your Payment has been sent before clicking "Submit Payment" to avoid fake Payment.</li>
+        </ol>
+        <hr>
+        <h3>Wallet Addresses:</h3>
+        <div class="wallets">
+            <div class="wallet">
+                <h4>Bitcoin (BTC)</h4>
+                <p>Wallet Address:</p>
+                <input type="text" id="btc-address" value="1FbqHfE1F1GsAn7goP52VCXYRMzCjYabjP" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('btc-address')">Copy BTC Address</button>
+            </div>
+            <div class="wallet">
+                <h4>Ethereum (ETH)</h4>
+                <p>Wallet Address:</p>
+                <input type="text" id="eth-address" value="0xd1e9718a46baa5edf092689189dc3a20034cfc73" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('eth-address')">Copy ETH Address</button>
+            </div>
+            <div class="wallet">
+                <h4>USDT-ERC20</h4>
+                <p>Wallet Address:</p>
+                <input type="text" id="usdt-erc20-address" value="0xd1e9718a46baa5edf092689189dc3a20034cfc73" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('usdt-erc20-address')">Copy USDT-ERC20 Address</button>
+            </div>
+            <div class="wallet">
+                <h4>USDT-TRC20</h4>
+                <p>Wallet Address:</p>
+                <input type="text" id="usdt-trc20-address" value="TGvVMUz9mcv2dGHkpaT5Tb8xt4EdhmTkuU" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('usdt-trc20-address')">Copy USDT-TRC20 Address</button>
+            </div>
+            <div class="wallet">
+                <h4>SOLANA (SOL)</h4>
+                <p>Wallet Address:</p>
+                <input type="text" id="sol-address" value="G8CeNvVtxFomWLqFJgmsKrpwNAf7rhcVimmx13dVFHsr" readonly>
+                <button class="copy-btn" onclick="copyToClipboard('sol-address')">Copy SOL Address</button>
+            </div>
+        </div>
+        <hr>
+        <h3>Payment Details:</h3>
+        <form>
+            <label for="amount">Enter Amount:</label>
+            <input type="number" id="amount" required>
+
+            <label for="gateway">Select Gateway:</label>
+            <select  id="gateway" required>
+                <option value="">Select Gateway</option>
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="USDT-ERC20">USDT-ERC20</option>
+                <option value="USDT-TRC20">USDT-TRC20</option>
+                <option value="SOL">SOLANA</option>
+            </select>
+            <button type="submit" id="submit-payment">Submit Payment</button>
+            <div id="payment-status" style="display: none;">Payment submitted successfully!</div>
+        </form>
+        <hr>
+
+        <p>Please note:</p>
+        <ul>
+            <li>Transfer to the deposit address provided. Sending other currencies or tokens to this address may result in the loss of your deposit.</li>
+            <li>Depositing to the above address requires confirmation. It will be credited automatically after 3 confirmations.</li>
+            <li>Minimum Deposit amount: $200. Any deposit less than the minimum will not be credited or refunded.</li>
+            <li>You can leave or close this page after submitting payment. Wait for our confirmation.</li>
+        </ul>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+        <div class="footer-copyright">
+            <p>&copy;2024 InvestSphere. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyToClipboard(id) {
+        var text = document.getElementById(id).value;
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Address copied to clipboard!');
+        }
+        // for payment status
+        document.getElementById('submit-payment').addEventListener('click', function() {
+            // Submit the form
+            document.querySelector('form').submit();
+            // Display success message
+            document.getElementById('payment-status').style.display = 'block';
+            // Hide form after Submission
+           // document.querySelector('form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,621 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Georgia;
+}
+.hero{
+    min-height: 100vh;
+    background-image: url(cryptocurrency-bitcoin-golden-coin-with-digital-circuit-lines-background_1017-33592.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    display: flex;
+}
+
+.invest-title{
+    font-size: 48px;
+    color: black;
+}
+.sphere{
+    color: blue;
+}
+.invest{
+    color: white;
+}
+.chai{
+    color: gold;
+}
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+nav a:hover{
+    background-color: white;
+}
+nav li :first-child{
+    margin-right: auto;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.sidebar ul{
+    list-style: none;
+    text-decoration: none;
+}
+@media (max-width: 700px) {
+    .hideonmobile{
+        display: none;
+    }
+}
+@media (max-width:400px) {
+    .sidebar{
+        width: 100%;
+    }
+}
+.text-box{
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: left;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    color: white;
+    font-size: 15px;
+}
+.button20 a{
+    color: white;
+}
+.button20{
+    width: 160px;
+    height: 60px;
+    position: relative;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.2s;
+    outline: none;
+    border: none;
+    background-color: #0c0c0c;
+}
+.button20:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.button20:active{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.button20::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 0.4s;
+}
+.button20::after{
+    background-color: #0c0c0c;
+}
+.button20:hover::after{
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* FEATURED INVESTMENTS */
+.featured-investments{
+    padding: 50px;
+    background-color: #f7f7f7;
+}
+.featured-investments h2{
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.investment-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.investment-card{
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.investment-card h3{
+    font-size: 24px;
+    margin-top: 10px;
+}
+.investment-card ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.investment-card li{
+    margin-bottom: 10px;
+}
+.metric{
+    font-weight: bold;
+    font-size: 18px;
+}
+.tooltip{
+    position: absolute;
+    opacity: 0;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+.investment-card li :hover .tooltip{
+    opacity: 1;
+    visibility: visible;
+}
+.value{
+    font-weight: bold;
+    font-size: 18px;
+    color: #337ab7;
+}
+.learn-more{
+    width: 160px;
+    height: 60px;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid #0c0c0c;
+    font-weight: bold;
+    text-align: center;
+    background-color: transparent;
+    position: relative;
+    transition: 0.5s ease;
+}
+.learn-more ::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #0c0c0c;
+    transition: 0.5s ease;
+}
+.learn-more:hover{
+    color: #337ab7;
+    transition-delay: 0.5s;
+}
+.learn-more :hover ::before{
+    width: 100%;
+}
+.learn-more::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #0c0c0c;
+    transition: 0.5s ease;
+    z-index: -1;
+}
+.learn-more:hover::after{
+    height: 100%;
+    transition-delay: 0.4s;
+}
+/* Respnsive Design */
+@media (max-width: 768px) {
+    .investment-card{
+        width: calc(50% -20px);
+    }
+}
+@media (max-width: 480px) {
+    .investment-card{
+        width: 100%;
+    }
+}
+/* Benefits section */
+.benefits{
+    padding: 50px;
+    background-color: #337ab7;
+    color: white;
+}
+.benefits h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.benefits p{
+    font-size: 18px;
+    text-align: center;
+}
+.benefit-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.benefit-card{
+    background-color: #23527c;
+    padding: 20px;
+    margin: 10px;
+    width: calc(25% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.benefit-card h3{
+    font-size: 24px;
+    margin-top: 10px;
+}
+.benefit-card p{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+}
+.benefit-card span{
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: white;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .benefit-card {
+        width: calc(33.33% - 20px);
+    }
+}
+@media (max-width: 768px) {
+    .benefit-card {
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 480px) {
+    .benefit-card{
+        width: 100%;
+    }
+}
+/* <!--Testimonials----> */
+.testimonials{
+    padding: 50px;
+    background-color: white;
+}
+.testimonials h2{
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.testimonial-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.testimonial-card{
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.testimonial-card img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.testimonial-card blockquote{
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.testimonial-card cite{
+    font-size: 18px;
+    color: #337ab7;
+}
+/* resopnive design */
+@media (max-width: 768px) {
+    .testimonial-card{
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 480px) {
+    .testimonial-card{
+        width: 100%;
+    }
+}
+/* Profit Calculator */
+.profit-caculator{
+    padding: 50px;
+    background-color: #f7f7f7;
+}
+.profit-caculator h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.profit-caculator p{
+    font-size: 18px;
+    text-align: center;
+}
+.profit-caculator form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profit-caculator label{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.profit-caculator select{
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.profit-caculator input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.profit-caculator button{
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.profit-caculator button:hover{
+    background-color: #3e8e41;
+}
+#profit-result{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* FAQ SECTION */
+.faq{
+    padding: 50px;
+    background: linear-gradient(-45deg,#ee7752,#e73c7e,#23a6d5,#23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+.faq h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+.faq dt{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+}
+.faq-question{
+    text-decoration: none;
+    color: #fff;
+}
+.faq-question:hover{
+    color: #fff;
+}
+.faq dd{
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+.faq dd.active{
+    max-height: 100vh;
+}
+.faq dd p{
+    font-size: 16px;
+    color: #fff;
+}
+/* Animation */
+.faq dd{
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.faq dd.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Lastest news section */
+.latest-news{
+    padding: 50px;
+    background-color: #f7f7f7;
+}
+.latest-news h2{
+    font-size: 36px ;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.news-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.news-card{
+    margin: 20px;
+    width: calc(33.33% - 40px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.news-card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 10px ;
+    border-top-right-radius: 10px;
+}
+.news-card h3{
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 0 20px;
+}
+.news-card p{
+    font-size: 16px;
+    color: #666;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+.read-more{
+    display: block;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.read-more:hover{
+    background-color: lightblue;
+}
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .news-card{
+        width: calc(50% - 40px);
+    }
+}
+@media (max-width: 480px) {
+    .news-card{
+        width: 100%;
+    }
+}
+
+/* Payment methods section */
+.payment-methods{
+    padding: 50px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+.payment-methods h2{
+    font-size: 32px;
+    margin-bottom: 20px ;
+}
+.payment-methods p{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.payment-logos-container{
+    height: 500px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+.payment-logos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.payment-logos img{
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+    scroll-snap-align: center;
+}
+
+/* FOOTER SECTION */
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-about,.footer-links,.footer-contact{
+    flex-basis: 25%;
+}
+.footer-about h3, .footer-contact h3 , .footer-links h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-links li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li{
+    margin-bottom: 10px;
+}
+.footer-links a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-links p{
+    margin-bottom: 10px;
+}
+.footer-copyright{
+    text-align: center;
+    margin-top: 20px;
+}

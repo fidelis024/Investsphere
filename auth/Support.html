@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Ticket</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    padding: 20px;
+}
+
+section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+.footer{
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer-about,.footer-links,.footer-contact{
+    flex-basis: 25%;
+}
+.footer-about h3, .footer-contact h3 , .footer-links h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.footer-links li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li{
+    margin-bottom: 10px;
+}
+.footer-links a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-links p{
+    margin-bottom: 10px;
+}
+.footer-copyright{
+    text-align: center;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Support Ticket</h1>
+        <h2>Submit a ticket for assistance</h2>
+        <hr/>
+
+        <form>
+            <section>
+                <h3>Ticket Information</h3>
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" required>
+
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="technical">Technical Issue</option>
+                    <option value="billing">Billing Question</option>
+                </select>
+            </section>
+
+            <section>
+                <h3>Describe Your Issue</h3>
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+            </section>
+
+            <section>
+                <h3>Contact Information</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </section>
+
+            <button type="submit" id="submit-ticket">Submit Ticket</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+        <div class="footer-copyright">
+            <p>&copy;2024 InvestSphere. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+// Submit support ticket
+document.getElementById('submit-ticket').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Get input values
+    var subject = document.getElementById('subject').value;
+    var category = document.getElementById('category').value;
+    var description = document.getElementById('description').value;
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    // Validate input values
+    if (subject === '' || category === '' || description === '' || name === '' || email === '') {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    // Submit ticket to API or local storage
+    submitTicket({
+        subject: subject,
+        category: category,
+        description: description,
+        name: name,
+        email: email
+    });
+});
+
+
+// Load saved ticket (local storage)
+window.onload = function() {
+    var savedTicket = localStorage.getItem('support-ticket');
+
+    if (savedTicket) {
+        var ticket = JSON.parse(savedTicket);
+
+        document.getElementById('subject').value = ticket.subject;
+        document.getElementById('category').value = ticket.category;
+        document.getElementById('description').value = ticket.description;
+        document.getElementById('name').value = ticket.name;
+        document.getElementById('email').value = ticket.email;
+    }
+};
+</script>
+</body>
+</html>
